@@ -4,10 +4,12 @@ const jwt = require('jsonwebtoken');
 
 // register user
 const register = async (req, res) => {
+  console.log(req.body);
   const { name, email, password } = req.body;
 
   // Simple validation
   if (!name || !email || !password) {
+  
     return res.status(400).json({ msg: 'Please enter all fields' });
   }
   // Check for existing user
